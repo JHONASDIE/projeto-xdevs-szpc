@@ -26,7 +26,7 @@ btnAvancar.addEventListener('click', function() {
     const ultimoCartao = cartaoAtual === cartoes.length - 1;
     if (ultimoCartao) return;
 
-    esconderCartaoSelecionado(cartaoSelecionado);
+    esconderCartao(cartaoSelecionado);
 
     cartaoAtual++;
     mostrarCartao(cartaoSelecionado);
@@ -37,7 +37,7 @@ btnVoltar.addEventListener('click', function() {
     const primeiroCartao = cartaoAtual === 0;
     if (primeiroCartao) return;
 
-    esconderCartaoSelecionado(cartaoSelecionado);
+    esconderCartao(cartaoSelecionado);
 
     cartaoAtual--;
     mostrarCartao(cartaoSelecionado);
@@ -48,6 +48,6 @@ function mostrarCartao() {
     cartoes[cartaoAtual].classList.add('selecionado');
 }
 
-function esconderCartaoSelecionado() {
-    cartaoSelecionado.classList.remove('selecionado');
+function esconderCartao() {
+    cartoes[cartaoAtual].classList.remove('selecionado');
 }

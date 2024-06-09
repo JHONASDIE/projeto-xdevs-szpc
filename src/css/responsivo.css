@@ -6,6 +6,9 @@
         padding: 0 15px;
         gap: 10px;
     }
+    .cartao .descricao .texto {
+        max-height: 80px;
+    }
     .btn-seta {
         width: 20px;
         height: 20px;
