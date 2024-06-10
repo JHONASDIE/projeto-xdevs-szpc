@@ -23,23 +23,20 @@ const cartoes = document.querySelectorAll('.cartao');
 const cartaoSelecionado = document.querySelector('.selecionado');
 
 btnAvancar.addEventListener('click', function() {
-    const ultimoCartao = cartaoAtual === cartoes.length - 1;
-    if (ultimoCartao) return;
 
     esconderCartao(cartaoSelecionado);
 
-    cartaoAtual++;
+    cartaoAtual = (cartaoAtual + 1) % cartoes.length;
+
     mostrarCartao(cartaoSelecionado);
 
 })
 
 btnVoltar.addEventListener('click', function() {
-    const primeiroCartao = cartaoAtual === 0;
-    if (primeiroCartao) return;
-
     esconderCartao(cartaoSelecionado);
 
-    cartaoAtual--;
+    cartaoAtual = (cartaoAtual - 1 + cartoes.length) % cartoes.length;
+
     mostrarCartao(cartaoSelecionado);
 
 })
